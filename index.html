@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend-dev-PreciousM</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="cover cover-left"></div>
+      <div class="cover cover-right turn"></div>
+
+      <div class="book">
+        <!--profile page-->
+        <div class="book-page page-left">
+          <div class="profile-page">
+            <img src="/img/profile.jpeg" alt="" />
+            <h1>Precious Mafoko</h1>
+            <h3>Fronted Developer</h3>
+
+            <div class="social-media">
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-github"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i> </a>
+            </div>
+
+            <p>
+              Hi! I'm Precious, a dedicated developer with a solid foundation in
+              frontend technologies, constantly creating, learning, and seeking
+              to solve complex problems. I also have experience in the
+              Electrical Engineering field and I'm a certified AWS Cloud
+              Practitioner.
+            </p>
+
+            <div class="btn-box">
+              <a href="#" class="btn">Download CV</a>
+              <a href="#" class="btn contact-me">Contact Me</a>
+            </div>
+          </div>
+        </div>
+
+        <!--page 1 & 2-->
+        <div class="book-page page-right turn" id="turn-1">
+          <!--page 1 (work experience)-->
+          <div class="page-front">
+            <h1 class="title">Work Experience</h1>
+            <div class="workeduc-box">
+              <div class="workeduc-content">
+                <span class="year"
+                  ><i class="fa-regular fa-calendar"></i>2025 - Present</span
+                >
+                <h3>Frontend Developer (Remote) - Freelance</h3>
+                <p>
+                  I Develope Portfolio sites using HTML, CSS, React, JavaScript,
+                  and Next.js and Tailwind CSS.
+                </p>
+              </div>
+
+              <div class="workeduc-content">
+                <span class="year"
+                  ><i class="fa-regular fa-calendar"></i>April 2022 - Mar
+                  2023</span
+                >
+                <h3>Tutor (Remote) - TeachMe2</h3>
+                <p>
+                  Mentored high school students in Engineering Graphics and
+                  Design, Electrical Technology and Mathematics, explaining
+                  concepts, and solving problems.
+                </p>
+              </div>
+
+              <div class="workeduc-content">
+                <span class="year"
+                  ><i class="fa-regular fa-calendar"></i>Nov 2020 - Mar
+                  2022</span
+                >
+                <h3>Trainee Engineer - Coca Cola Beverages South Africa</h3>
+                <p>
+                  I have experience with the following:
+                  <strong
+                    >SCADA systems, AutoCAD, SolidWorks, Power Distribution
+                    Units, Energy Management Systems</strong
+                  >
+                </p>
+              </div>
+              <div class="workeduc-content">
+                <span class="year"
+                  ><i class="fa-regular fa-calendar"></i>Nov 2020 - Mar
+                  2022</span
+                >
+                <h3>Lab Technician - Tshwane University of Technology</h3>
+                <p>
+                  Support students during practicals, and ensuring lab equipment
+                  are well maintained
+                </p>
+              </div>
+            </div>
+
+            <span class="number-page">1</span>
+
+            <!--next button-->
+            <span class="nextprev-btn" data-page="turn-1">
+              <i class="fa-solid fa-chevron-right"></i>
+            </span>
+          </div>
+
+          <!--page 2 (Education)-->
+          <div class="page-back">
+            <h1 class="title">Education</h1>
+
+            <div class="workeduc-box">
+              <div class="workeduc-content">
+                <span class="year">
+                    <i class="fa-regular fa-calendar"></i>2026 - 2029</span>
+                <h3>BSc Mathematics and Computer Science - UNISA</h3>
+              </div>
+
+              <div class="workeduc-content">
+                <span class="year">
+                    <i class="fa-regular fa-calendar"></i>2024</span>
+                <h3>Diploma Frontend Development - SheCodes</h3>
+              </div>
+
+              <div class="workeduc-content">
+                <span class="year">
+                    <i class="fa-regular fa-calendar"></i>2021</span>
+                <h3>3 Year Degree (Electrcial Engineering) - Tshwane University of Technology</h3>
+                
+              </div>
+              <div class="workeduc-content">
+                <span class="year">
+                    <i class="fa-regular fa-calendar"></i>2025</span>
+                <h3>AWS Cloud Practitioner - AWS</h3>
+                
+              </div>
+            </div>
+
+            <span class="number-page">2</span>
+
+            <!--prev button-->
+            <span class="nextprev-btn back" data-page="turn-1">
+              <i class="fa-solid fa-chevron-left"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
