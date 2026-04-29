@@ -1,80 +1,85 @@
 //turn pages when click next or prev button
-const pageTurnBtn = document.querySelectorAll('.nextprev-btn');
+const pageTurnBtn = document.querySelectorAll(".nextprev-btn");
 
 pageTurnBtn.forEach((el, index) => {
-    el.onclick = () => {
-        const pageTurnId = el.getAttribute('data-page');
-        const pageTurn = document.getElementById(pageTurnId);
+  el.onclick = () => {
+    const pageTurnId = el.getAttribute("data-page");
+    const pageTurn = document.getElementById(pageTurnId);
 
-        if (pageTurn.classList.contains('turn')) {
-            //Turning Back
-            pageTurn.classList.remove('turn');
-            //Reset z-index immediately or after transition
-            setTimeout(() => {
-                pageTurn.style.zIndex = 20- index; //Let CSS handle base z-index
-            }, 500);
-        }
-        else {
-            //Turning Forward
-            pageTurn.classList.add('turn');
-            setTimeout(() => {
-              pageTurn.style.zIndex = 20 + index; // Set a high, consistent z-index
-            }, 500);
-        }
+    if (pageTurn.classList.contains("turn")) {
+      //Turning Back
+      pageTurn.classList.remove("turn");
+      //Reset z-index immediately or after transition
+      setTimeout(() => {
+        pageTurn.style.zIndex = 20 - index; //Let CSS handle base z-index
+      }, 500);
+    } else {
+      //Turning Forward
+      pageTurn.classList.add("turn");
+      setTimeout(() => {
+        pageTurn.style.zIndex = 20 + index; // Set a high, consistent z-index
+      }, 500);
     }
-})
+  };
+});
 
 //contact  me button when click
-const  pages = document.querySelectorAll('.book-page.page-right');
-const contactMeBtn = document.querySelector('.btn.contact-me');
+const pages = document.querySelectorAll(".book-page.page-right");
+const contactMeBtn = document.querySelector(".btn.contact-me");
 
 contactMeBtn.onclick = () => {
-    pages.forEach((page, index) => {
-        setTimeout(() => {
-            page.classList.add('turn');
+  pages.forEach((page, index) => {
+    setTimeout(
+      () => {
+        page.classList.add("turn");
 
-            setTimeout(() => {
-                page.style.zIndex = 20 + index;
-            }, 500);
-        }, (index + 1) * 200 + 100 );
-    })
-}
+        setTimeout(() => {
+          page.style.zIndex = 20 + index;
+        }, 500);
+      },
+      (index + 1) * 200 + 100,
+    );
+  });
+};
 
 //create reverse index function
 let totalPages = pages.length;
 let pageNumber = 0;
 
-function reverseIndex () {
-    pageNumber--;
-    if (pageNumber < 0) {
-        pageNumber = totalPages - 1;
-    }
+function reverseIndex() {
+  pageNumber--;
+  if (pageNumber < 0) {
+    pageNumber = totalPages - 1;
+  }
 }
 
 //back to profile button when clicked
-const backProfileBtn = document.querySelector('.back-profile');
+const backProfileBtn = document.querySelector(".back-profile");
 
 backProfileBtn.onclick = () => {
-    pages.forEach((_, index) => {
+  pages.forEach((_, index) => {
+    setTimeout(
+      () => {
+        reverseIndex();
+        pages[pageNumber].classList.remove("turn");
+
         setTimeout(() => {
-            reverseIndex();
-            pages[pageNumber].classList.remove('turn');
+          reverseIndex();
+          pages[pageNumber].style.zIndex = 10 + index;
+        }, 500);
+      },
+      (index + 1) * 200 + 100,
+    );
+  });
+};
 
-            setTimeout(() => {
-                reverseIndex();
-                pages[pageNumber].style.zIndex = 10 + index;
-            }, 500)
-        }, (index + 1) * 200 + 100)
-    })
-}
-
-//Opening animation 
-const coverRight = document.querySelector('.cover.cover-right');
+//Opening animation
+const coverRight = document.querySelector(".cover.cover-right");
 const pageLeft = document.querySelector(".book-page.page-left");
 
 //Opening animation (cover right animation)
 setTimeout(() => {
-    coverRight.classList.add('turn');
+  coverRight.classList.add("turn");
 }, 2100);
 
 setTimeout(() => {
@@ -87,16 +92,17 @@ setTimeout(() => {
 }, 3200);
 
 //Opening animation (all page right animation)
- pages.forEach((_, index) => {
-   setTimeout(
-     () => {
-       reverseIndex();
-       pages[pageNumber].classList.remove("turn");
+pages.forEach((_, index) => {
+  setTimeout(
+    () => {
+      reverseIndex();
+      pages[pageNumber].classList.remove("turn");
 
-       setTimeout(() => {
-         reverseIndex();
-         pages[pageNumber].style.zIndex = 10 + index;
-       }, 500);
-     },
-     (index + 1) * 200 + 2100,);
- });
+      setTimeout(() => {
+        reverseIndex();
+        pages[pageNumber].style.zIndex = 10 + index;
+      }, 500);
+    },
+    (index + 1) * 200 + 2100,
+  );
+});
