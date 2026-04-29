@@ -239,6 +239,10 @@ body {
     border-radius: 50%;
 }
 
+.workeduc-box h3{
+    font-size: 1rem;
+}
+
 .workeduc-content .year {
     color: var(--main-color);
 }
@@ -280,6 +284,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: .4rem;
+    margin-top: 1rem;
 }
 
 .services-box .services-content {
